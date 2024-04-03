@@ -2,38 +2,34 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Форма</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красивая форма</title>
     <style>
-
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
         }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 200;
-            color: var(--tg-theme-text-color); /* Убрал лишнее */
-            background-color: var(--tg-theme-bg-color); /* Добавил задание фона */
-        }
-        #main{
-            width: 100%;
-            padding: 20px;
+        .header {
             text-align: center;
+            margin-bottom: 20px;
         }
-        img {
-            width: 70px;
-            height: auto; /* Убрал некорректное значение */
+        .header img {
+            width: 100px;
+            height: auto;
         }
         .form-container {
-            background-color: var(--tg-theme-secondary-bg-color);
+            background-color: #fff;
             padding: 20px;
             border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             width: 300px;
-            margin: auto; /* Центрируем форму */
-            margin-top: 20px; /* Добавил немного отступа сверху */
         }
         .form-container label {
             display: block;
@@ -50,7 +46,7 @@
             box-sizing: border-box;
         }
         .form-container input[type="submit"] {
-            background-color: var(--tg-theme-button-color);
+            background-color: #4CAF50;
             color: white;
             padding: 12px 20px;
             border: none;
@@ -59,7 +55,7 @@
             font-size: 16px;
         }
         .form-container input[type="submit"]:hover {
-            background-color: var(--tg-theme-button-color);
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -67,7 +63,7 @@
 
 <div class="header">
     <p>Привет! Расскажи немного о себе, своем опыте и навыках. Это поможет в поиске игроков.</p>
-    <img src="https://w7.pngwing.com/pngs/336/989/png-transparent-basketball-court-basket-sport-orange-sphere.png" alt="Basketball ball">
+    <img src="https://www.pngall.com/wp-content/uploads/1/Sports-PNG-File-Download-Free.png" alt="Basketball ball">
 </div>
 
 <div class="form-container">
@@ -84,6 +80,8 @@
 
 <script>
     document.getElementById("myForm").addEventListener("submit", function(event){
+        event.preventDefault(); // предотвращаем отправку формы
+
         // Получаем значения полей формы
         var name = document.getElementById("name").value;
         var age = document.getElementById("age").value;
@@ -92,9 +90,13 @@
         // Здесь можно сделать что-то с полученными значениями, например, отправить их на сервер
 
         // Выводим значения в консоль для примера
-
+        console.log("Имя: " + name);
+        console.log("Возраст: " + age);
+        console.log("О себе: " + about);
     });
 </script>
+
 </body>
 </html>
+
 
