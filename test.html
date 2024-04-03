@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Красивая форма</title>
+    <title>Форма</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: var(--tg-theme-bg-color);
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
         }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 100px;
+            height: auto;
+        }
         .form-container {
-            background-color: #fff;
+            background-color: var(--tg-theme-bg-color);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
         }
         .form-container input[type="text"],
-        .form-container textarea {
-            width: 100%;
+        .form-container textarea,
+        .form-container input[type="number"] {
+            width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
@@ -31,7 +46,7 @@
             box-sizing: border-box;
         }
         .form-container input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: var(--tg-theme-bg-color);
             color: white;
             padding: 12px 20px;
             border: none;
@@ -40,16 +55,23 @@
             font-size: 16px;
         }
         .form-container input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: var(--tg-theme-bg-color);
         }
     </style>
 </head>
 <body>
 
+<div class="header">
+    <p>Привет! Расскажи немного о себе, своем опыте и навыках. Это поможет в поиске игроков.</p>
+    <img src="https://static.vecteezy.com/system/resources/previews/000/288/761/original/basketball-ball-vector-icon.jpg" alt="Basketball ball">
+</div>
+
 <div class="form-container">
     <form id="myForm">
         <label for="name">Имя:</label>
         <input type="text" id="name" name="name" required>
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" name="age" required>
         <label for="about">О себе:</label>
         <textarea id="about" name="about" rows="4" required></textarea>
         <input type="submit" value="Отправить">
@@ -58,16 +80,18 @@
 
 <script>
     document.getElementById("myForm").addEventListener("submit", function(event){
-        event.preventDefault(); // предотвращаем отправку формы
-
         // Получаем значения полей формы
         var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
         var about = document.getElementById("about").value;
 
         // Здесь можно сделать что-то с полученными значениями, например, отправить их на сервер
+
+        // Выводим значения в консоль для примера
 
     });
 </script>
 
 </body>
 </html>
+
