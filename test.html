@@ -15,8 +15,8 @@
         body {
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
-            color: var(--tg-theme-text-color);
-            color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color); /* Убрал лишнее */
+            background-color: var(--tg-theme-bg-color); /* Добавил задание фона */
         }
         #main{
             width: 100%;
@@ -25,13 +25,15 @@
         }
         img {
             width: 70px;
-            height: 30px auto;
+            height: auto; /* Убрал некорректное значение */
         }
         .form-container {
             background-color: var(--tg-theme-secondary-bg-color);
             padding: 20px;
             border-radius: 8px;
             width: 300px;
+            margin: auto; /* Центрируем форму */
+            margin-top: 20px; /* Добавил немного отступа сверху */
         }
         .form-container label {
             display: block;
