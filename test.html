@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красивая форма</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-container input[type="text"],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form id="myForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="about">О себе:</label>
+        <textarea id="about" name="about" rows="4" required></textarea>
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event){
+        event.preventDefault(); // предотвращаем отправку формы
+
+        // Получаем значения полей формы
+        var name = document.getElementById("name").value;
+        var about = document.getElementById("about").value;
+
+        // Здесь можно сделать что-то с полученными значениями, например, отправить их на сервер
+
+    });
+</script>
+
+</body>
+</html>
