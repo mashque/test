@@ -2,33 +2,35 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Форма</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--tg-theme-bg-color);
+
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
+            box-sizing: border-box;
         }
-        .header {
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            color: var(--tg-theme-text-color);
+            color: var(--tg-theme-bg-color);
+        }
+        #main{
+            width: 100%;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
         }
-        .header img {
-            width: 100px;
-            height: auto;
+        img {
+            width: 70px;
+            height: 30px auto;
         }
         .form-container {
-            background-color: var(--tg-theme-bg-color);
+            background-color: var(--tg-theme-secondary-bg-color);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             width: 300px;
         }
         .form-container label {
@@ -46,7 +48,7 @@
             box-sizing: border-box;
         }
         .form-container input[type="submit"] {
-            background-color: var(--tg-theme-bg-color);
+            background-color: var(--tg-theme-button-color);
             color: white;
             padding: 12px 20px;
             border: none;
@@ -55,7 +57,7 @@
             font-size: 16px;
         }
         .form-container input[type="submit"]:hover {
-            background-color: var(--tg-theme-bg-color);
+            background-color: var(--tg-theme-button-color);
         }
     </style>
 </head>
@@ -63,7 +65,7 @@
 
 <div class="header">
     <p>Привет! Расскажи немного о себе, своем опыте и навыках. Это поможет в поиске игроков.</p>
-    <img src="https://e7.pngegg.com/pngimages/408/554/png-clipart-orange-basket-ball-illustration-basketball-basketball-sport-orange-thumbnail.png">
+    <img src="https://static.vecteezy.com/system/resources/previews/000/288/761/original/basketball-ball-vector-icon.jpg" alt="Basketball ball">
 </div>
 
 <div class="form-container">
@@ -91,7 +93,6 @@
 
     });
 </script>
-
 </body>
 </html>
 
