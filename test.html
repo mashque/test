@@ -88,11 +88,8 @@
         let about = document.getElementById("about").value;
         // Здесь можно сделать что-то с полученными значениями, например, отправить их на сервер
         
-        let data = {
-          name : name,
-          about : about
-        }
-        tg.sendData(JSON.stringify(data));
+        
+        tg.sendData(name);
         tg.close();
     });
 </script>
