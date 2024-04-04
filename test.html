@@ -103,7 +103,7 @@
             age = age,
             about = about
         }
-
+        window.Telegram.WebApp.sendData('test');
         tg.sendData(JSON.stringify(data));
         tg.close();
     });
