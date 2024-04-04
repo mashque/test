@@ -78,14 +78,12 @@
         <div id="error"></div>
     </form>
 </div>
-<script src="https://telegram.org/js/telegram-web-app.js">
-    let tg =window.Telegram.WebApp;
-    window.Telegram.WebApp.sendData('test');
-</script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
     let tg =window.Telegram.WebApp;
     window.Telegram.WebApp.sendData('test');
     document.getElementById("myForm").addEventListener("submit", function(event){
+        event.preventDefault();
         // Получаем значения полей формы
         document.getElementById("error").innerText = '';
         var now = new Date();
@@ -95,10 +93,6 @@
         var about = document.getElementById("about").value;
         if (name.length < 4){
             document.getElementById("error").innerText = 'Ошибка в имени';
-            return;
-        }
-        if (age.length < 18){
-            document.getElementById("error").innerText = 'Вы младше 18';
             return;
         }
         // Здесь можно сделать что-то с полученными значениями, например, отправить их на сервер
