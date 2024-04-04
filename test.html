@@ -94,7 +94,7 @@
           age : age,
           about : about
         }
-        tg.sendData(data);
+        tg.sendData(JSON.stringify(data));
         tg.close();
     });
 </script>
