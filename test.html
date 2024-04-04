@@ -83,18 +83,18 @@
     let tg =window.Telegram.WebApp;
     document.getElementById("myForm").addEventListener("submit", function(event){
         // Получаем значения полей формы
-        dociment.getElementById("error").innerText = '';
+        document.getElementById("error").innerText = '';
         var now = new Date();
         var datetime = now.toLocaleString();
         var name = document.getElementById("name").value;
         var age = datetime - document.getElementById("age").value;
         var about = document.getElementById("about").value;
         if (name.length < 4){
-            dociment.getElementById("error").innerText = 'Ошибка в имени';
+            document.getElementById("error").innerText = 'Ошибка в имени';
             return;
         }
         if (age.length < 18){
-            dociment.getElementById("error").innerText = 'Вы младше 18';
+            document.getElementById("error").innerText = 'Вы младше 18';
             return;
         }
         // Здесь можно сделать что-то с полученными значениями, например, отправить их на сервер
