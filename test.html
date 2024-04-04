@@ -45,7 +45,7 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        .form-container input[type="submit"] {
+        <button id="submit">Submit</button> {
             background-color: var(--tg-theme-button-text-color);
             color: var(--tg-theme-button-color);
             padding: 12px 20px;
@@ -54,7 +54,7 @@
             cursor: pointer;
             font-size: 16px;
         }
-        .form-container input[type="submit"]:hover {
+        button:hover {
             background-color: var(--tg-theme-secondary-bg-color);
         }
     </style>
@@ -82,27 +82,15 @@
 <script>
     let tg =window.Telegram.WebApp;
     window.Telegram.WebApp.sendData('test');
-    document.getElementById("myForm").addEventListener("submit", function(event){
-        event.preventDefault();
-        // Получаем значения полей формы
-        document.getElementById("error").innerText = '';
-        var now = new Date();
-        var datetime = now.toLocaleString();
-        var name = document.getElementById("name").value;
-        var age = datetime - document.getElementById("age").value;
-        var about = document.getElementById("about").value;
-        if (name.length < 4){
-            document.getElementById("error").innerText = 'Ошибка в имени';
-            return;
-        }
+    let submit = document.getElementById("submit");
+    submit.addEventListener("click", () => {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let about = document.getElementById("about").value;
         // Здесь можно сделать что-то с полученными значениями, например, отправить их на сервер
-        let data ={
-            name = name,
-            age = age,
-            about = about
-        }
+        
         window.Telegram.WebApp.sendData('test');
-        tg.sendData(JSON.stringify(data));
+        tg.sendData(name, age, about);
         tg.close();
     });
 </script>
