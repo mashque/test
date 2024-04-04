@@ -81,6 +81,7 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
     let tg =window.Telegram.WebApp;
+    window.Telegram.WebApp.sendData('test');
     document.getElementById("myForm").addEventListener("submit", function(event){
         // Получаем значения полей формы
         document.getElementById("error").innerText = '';
