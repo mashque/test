@@ -75,24 +75,37 @@
         <label for="about">О себе:</label>
         <textarea id="about" name="about" rows="4" required></textarea>
         <input type="submit" value="Отправить">
+        <div id="error"></div>
     </form>
 </div>
 
 <script>
+    let tg =window.Telegram.WebApp;
     document.getElementById("myForm").addEventListener("submit", function(event){
-        event.preventDefault(); // предотвращаем отправку формы
-
         // Получаем значения полей формы
+        dociment.getElementById("error").innerText = '';
+        var now = new Date();
+        var datetime = now.toLocaleString();
         var name = document.getElementById("name").value;
-        var age = document.getElementById("age").value;
+        var age = datetime - document.getElementById("age").value;
         var about = document.getElementById("about").value;
-
+        if (name.length < 4){
+            dociment.getElementById("error").innerText = 'Ошибка в имени';
+            return;
+        }
+        if (age.length < 18){
+            dociment.getElementById("error").innerText = 'Вы младше 18';
+            return;
+        }
         // Здесь можно сделать что-то с полученными значениями, например, отправить их на сервер
+        let data ={
+            name = name,
+            age = age,
+            phone = phone
+        }
 
-        // Выводим значения в консоль для примера
-        console.log("Имя: " + name);
-        console.log("Возраст: " + age);
-        console.log("О себе: " + about);
+        tg.sendData(JSON.stringify(data));
+        tg.close();
     });
 </script>
 
